@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Mad Lib</title>
+<meta charset="utf-8">
+<script>
+window.onload = madlib;
+
+function madlib() {
+var button = document.getElementById("first_element");
+button.onclick = goMad;
+
+}
+
+ function goMad() { 
+ var words = [];
+ var inputs = document.getElementsByTagName("input"); 
+
+for(i=0;i<inputs.length;i++){words[i]=inputs[i].value}
+ var story = words[0] + " " + words[1] + " the " + words[2] + " bone with great care.";
+
+ var span = document.getElementById("sentence");
+ span.innerHTML = story;
+
+ 
+}
+
+
+</script>
+</head>
+<body>
+<form>
+Enter words below and get a sentence.</br></br>
+<label for="noun">Noun:</label>
+<input id="noun" type="text" size="20"> <br>
+<label for="verb">Verb:</label>
+<input id="verb" type="text" size="20"><br>
+<label for="adjective">Adjective:</label>
+<input id="adjective" type="text" size="20"><br>
+<input type="button" id="first_element" value="sentence!">
+</form>
+
+<div id="sentence">
+</div>
+
+</body>
+</html>
